@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: Properties
+    let animals: [Animal] = Bundle.main.decode("animals.json")
     
     // MARK: Body
     var body: some View {
@@ -21,16 +22,28 @@ struct ContentView: View {
                     .frame(height: 300)
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 
-            }//: List
+                ForEach(animals) { animal in
+                    
+                    NavigationLink(destination: AnimalDetailView(animal: animal)) {
+                        
+                        AnimalListItemView(animal: animal)
+                        
+                    } //: NavigationLink
+                    
+                } //: ForEach
+                
+            } //: List
             .navigationBarTitle("Africa", displayMode: .large)
             
-        }//: NavigationView
+        } //: NavigationView
         
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+        }
     }
 }
