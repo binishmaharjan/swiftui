@@ -40,7 +40,7 @@ struct VideoListItemView: View {
                     .fontWeight(.heavy)
                     .foregroundColor(.accentColor)
                 
-                Text(video.headeline)
+                Text(video.headline)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
