@@ -95,6 +95,9 @@ struct ContentView: View {
                     
                 } //: ForEach
                 
+                CreditCardView() 
+                    .modifier(CenterModifier())
+                
             } //: LazyVGrid
             
         } //: ScrollView
